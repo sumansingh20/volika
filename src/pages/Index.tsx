@@ -2,12 +2,15 @@ import FloatingHearts from "@/components/FloatingHearts";
 import RosePetals from "@/components/RosePetals";
 import MusicPlayer from "@/components/MusicPlayer";
 import HeroSection from "@/components/sections/HeroSection";
+ import CountdownSection from "@/components/sections/CountdownSection";
 import ShayariSection from "@/components/sections/ShayariSection";
 import LoveLetterSection from "@/components/sections/LoveLetterSection";
 import MemoriesSection from "@/components/sections/MemoriesSection";
 import WhySpecialSection from "@/components/sections/WhySpecialSection";
+ import DreamSection from "@/components/sections/DreamSection";
 import TimelineSection from "@/components/sections/TimelineSection";
 import PromiseSection from "@/components/sections/PromiseSection";
+ import QuoteCarouselSection from "@/components/sections/QuoteCarouselSection";
 import FinalSection from "@/components/sections/FinalSection";
 
 const Index = () => {
@@ -23,12 +26,15 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <HeroSection />
+         <CountdownSection />
         <ShayariSection />
         <LoveLetterSection />
         <MemoriesSection />
         <WhySpecialSection />
+         <DreamSection />
         <TimelineSection />
         <PromiseSection />
+         <QuoteCarouselSection />
         <FinalSection />
       </main>
       
