@@ -3,13 +3,14 @@ import { useMemo } from "react";
 
 const FloatingHearts = () => {
   const hearts = useMemo(() => {
-    return Array.from({ length: 15 }, (_, i) => ({
+     return Array.from({ length: 25 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 5,
-      duration: 8 + Math.random() * 7,
-      size: 12 + Math.random() * 20,
-      opacity: 0.2 + Math.random() * 0.4,
+       duration: 10 + Math.random() * 10,
+       size: 10 + Math.random() * 24,
+       opacity: 0.15 + Math.random() * 0.35,
+       heart: ['❤', '💕', '💗', '💖', '💝'][Math.floor(Math.random() * 5)],
     }));
   }, []);
 
@@ -27,8 +28,9 @@ const FloatingHearts = () => {
           initial={{ y: "100vh", rotate: 0 }}
           animate={{
             y: "-10vh",
-            rotate: [0, 15, -15, 10, -10, 0],
-            x: [0, 30, -20, 25, -15, 0],
+             rotate: [0, 20, -20, 15, -15, 0],
+             x: [0, 40, -30, 35, -20, 0],
+             scale: [1, 1.1, 1, 1.15, 1],
           }}
           transition={{
             duration: heart.duration,
@@ -37,7 +39,7 @@ const FloatingHearts = () => {
             ease: "linear",
           }}
         >
-          ❤
+           {heart.heart}
         </motion.div>
       ))}
     </div>

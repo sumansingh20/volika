@@ -3,13 +3,14 @@ import { useMemo } from "react";
 
 const RosePetals = () => {
   const petals = useMemo(() => {
-    return Array.from({ length: 20 }, (_, i) => ({
+     return Array.from({ length: 30 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      delay: Math.random() * 8,
-      duration: 10 + Math.random() * 8,
-      size: 16 + Math.random() * 12,
+       delay: Math.random() * 10,
+       duration: 12 + Math.random() * 10,
+       size: 14 + Math.random() * 16,
       rotation: Math.random() * 360,
+       petal: ['🌸', '🌺', '💮', '🏵️'][Math.floor(Math.random() * 4)],
     }));
   }, []);
 
@@ -23,12 +24,12 @@ const RosePetals = () => {
             left: `${petal.left}%`,
             fontSize: petal.size,
           }}
-          initial={{ y: "-5vh", rotate: petal.rotation, opacity: 0.9 }}
+           initial={{ y: "-5vh", rotate: petal.rotation, opacity: 0.85 }}
           animate={{
             y: "105vh",
             rotate: petal.rotation + 720,
-            x: [0, 50, -30, 40, -20, 60],
-            opacity: [0.9, 0.8, 0.7, 0.5, 0.3],
+             x: [0, 60, -40, 50, -30, 70, -20],
+             opacity: [0.85, 0.75, 0.65, 0.5, 0.35, 0.2],
           }}
           transition={{
             duration: petal.duration,
@@ -37,7 +38,7 @@ const RosePetals = () => {
             ease: "linear",
           }}
         >
-          🌸
+           {petal.petal}
         </motion.div>
       ))}
     </div>
